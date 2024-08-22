@@ -9,19 +9,22 @@ const annonceSchema = new mongoose.Schema(
     etat: { type: String, required: true },
     prix: { type: Number, required: true },
 
-    // url des image de la publication (maximum 10 images)
-    url_image1: { type: String,required: true }, 
-    url_image2: { type: String }, 
+    // URLs of the images (maximum 10 images)
+    url_image1: { type: String, required: true },
+    url_image2: { type: String },
     url_image3: { type: String },
-    url_image4: { type: String }, 
-    url_image5: { type: String }, 
-    url_image6: { type: String }, 
-    url_image7: { type: String }, 
-    url_image8: { type: String }, 
-    url_image9: { type: String }, 
-    url_image10: { type: String },  
+    url_image4: { type: String },
+    url_image5: { type: String },
+    url_image6: { type: String },
+    url_image7: { type: String },
+    url_image8: { type: String },
+    url_image9: { type: String },
+    url_image10: { type: String },
 
-    description: { type: String, maxlength: 15000 } // description de l'annonce / voiture à vendre
+    description: { type: String, maxlength: 15000 },
+
+    // Reference to the user who created the annonce
+    user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true }
   },
   { timestamps: true }
 );

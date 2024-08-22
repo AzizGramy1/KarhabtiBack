@@ -7,7 +7,7 @@ const userSchema = new mongoose.Schema(
     prenom: { type: String, required: true },
     sexe: {
       type: String,
-      enum: ["Homme", "Femme","Autre"],
+      enum: ["Homme", "Femme", "Autre"],
       required: true,
     },
     email: { type: String, required: true, unique: true },
@@ -22,16 +22,17 @@ const userSchema = new mongoose.Schema(
     etat: { type: Boolean, default: false },
     type_User: {
       type: String,
-      enum: ["Administrateur", "Client", "Visitor"],
-      default: "Client",
+      enum: ["Particulier", "Professionel"],
+      default: "Particulier",
     },
     date_inscrp: { type: Date, default: Date.now },
+    cars: [{ type: mongoose.Schema.Types.ObjectId, ref: "Cars" }] // Many-to-many relationship with Cars
   },
   { timestamps: true }
 );
 
 userSchema.pre("save", async function (next) {
-  try {   
+  try {
     const salt = await bcrypt.genSalt();
     this.password = await bcrypt.hash(this.password, salt);
     next();
@@ -46,7 +47,5 @@ userSchema.post("save", function (doc, next) {
 });
 
 const User = mongoose.model("User", userSchema);
-
-
 
 module.exports = User;

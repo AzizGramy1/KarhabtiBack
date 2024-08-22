@@ -21,6 +21,8 @@ var carsRouter = require('./routes/cars');
 var annonceRouter = require ('./routes/annonce');
 var assistanceSupportRouter = require ('./routes/assistance&support');
 var commentaireRouter = require ('./routes/commentaire');
+var transactionRouter = require ('./routes/transaction');
+
 
 
 
@@ -44,6 +46,8 @@ app.use('/cars',carsRouter);
 app.use('/annnonce', annonceRouter);
 app.use('/assistance&support', assistanceSupportRouter);
 app.use('/commentaire', commentaireRouter);
+app.use('/transaction', transactionRouter);
+
 
 
 

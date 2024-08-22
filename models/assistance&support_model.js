@@ -17,6 +17,7 @@ const assistanceSupportSchema = new mongoose.Schema({
   }
 });
 
+
 const AssistanceSupport = mongoose.model('AssistanceSupport', assistanceSupportSchema);
 
 module.exports = AssistanceSupport;
