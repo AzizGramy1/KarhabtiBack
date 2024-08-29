@@ -16,6 +16,7 @@ require('dotenv').config();
 /// les routes de l'application:
 
 var indexRouter = require('./routes/index');
+var authorisedRouter = require('./routes/authorised')
 var usersRouter = require('./routes/users');
 var carsRouter = require('./routes/cars');
 var annonceRouter = require ('./routes/annonce');
@@ -47,7 +48,10 @@ app.use('/annnonce', annonceRouter);
 app.use('/assistance&support', assistanceSupportRouter);
 app.use('/commentaire', commentaireRouter);
 app.use('/transaction', transactionRouter);
+app.use('/auth',authorisedRouter);
 
+
+///log des session
 
 
 

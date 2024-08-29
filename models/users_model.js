@@ -16,7 +16,7 @@ const userSchema = new mongoose.Schema(
     image_user: { type: String, default: "Client.png" },
     role: {
       type: String,
-      enum: ["admin", "client", "agent"],
+      enum: ["Admin", "client", "agent"],
       default: "client",
     },
     etat: { type: Boolean, default: false },
