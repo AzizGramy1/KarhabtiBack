@@ -16,7 +16,7 @@ const carsSchema = new mongoose.Schema(
     transmission: { type: String, required: true },
     pay_origine: { type: String },
     images: [{ type: String }],
-    users: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }] // Many-to-many relationship with Users
+    annonce: { type: mongoose.Schema.Types.ObjectId, ref: "Annonce" } // One-to-many relationship with Annonce
   },
   { timestamps: true }
 );

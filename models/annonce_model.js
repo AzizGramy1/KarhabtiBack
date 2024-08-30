@@ -24,7 +24,10 @@ const annonceSchema = new mongoose.Schema(
     description: { type: String, maxlength: 15000 },
 
     // Reference to the user who created the annonce
-    user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true }
+    user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+
+    // Reference to the cars associated with this annonce
+    cars: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Cars' }] // One-to-many relationship with Cars
   },
   { timestamps: true }
 );
