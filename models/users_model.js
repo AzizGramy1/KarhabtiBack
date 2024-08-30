@@ -26,7 +26,8 @@ const userSchema = new mongoose.Schema(
       default: "Particulier",
     },
     date_inscrp: { type: Date, default: Date.now },
-    cars: [{ type: mongoose.Schema.Types.ObjectId, ref: "Cars" }] // Many-to-many relationship with Cars
+    cars: [{ type: mongoose.Schema.Types.ObjectId, ref: "Cars" }], // Many-to-many relationship with Cars
+    supports: [{ type: mongoose.Schema.Types.ObjectId, ref: "AssistanceSupport" }] // One-to-many relationship with AssistanceSupport
   },
   { timestamps: true }
 );

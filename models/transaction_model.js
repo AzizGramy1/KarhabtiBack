@@ -8,10 +8,10 @@ const transactionSchema = new mongoose.Schema({
     devise: { type: String, required: true }, // Currency, e.g., 'USD', 'EUR'
     statut: { type: String, required: true, enum: ['Pending', 'Completed', 'Failed'] }, // Status of the transaction
     methode_paiement: { type: String, required: true }, // Payment method used, e.g., 'Credit Card', 'Bank Transfer'
-    id_acheteur: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true }, // Reference to the buyer
-    id_vendeur: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true }, // Reference to the seller
+    user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true }, // Reference to the user who made the transaction
     commentaire: { type: String } // Optional field for any notes related to the transaction
 });
 
 const Transaction = mongoose.model('Transaction', transactionSchema);
+
 module.exports = Transaction;

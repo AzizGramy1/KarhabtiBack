@@ -15,6 +15,8 @@ router.get('getAllUser/', userController.getUsers);
 // Route pour obtenir un utilisateur par ID
 router.get('getUserById/:id', userController.getUserById);
 
+
+
 // Route pour mettre à jour un utilisateur
 router.put('updateUserById/:id', userController.updateUser);
 
@@ -25,4 +27,13 @@ router.delete('DeleteUserById/:id', userController.deleteUser);
 // Trier les utilisateur par plusieurs criteres
 router.get('sortUsers/', userController.sortUsers);
 
+//Rechercher les utilisateur :
+router.get('searchUserByCreteria/', userController.searchUsers);
+
 module.exports = router;
+
+
+
+
+
+

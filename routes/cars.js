@@ -17,6 +17,16 @@ router.put('/updateCarById/:id', carsController.updateCar);
 // Supprimer une voiture par ID
 router.delete('/deleteCarById/:id', carsController.deleteCar);
 
-router.get('/searchCarMultiCritere',carsController.searchCars);
+router.get('/searchCar',carsController.searchCars);
+
+//trier les vehicules par different criteres
+router.get('/searchCarMultiCritere',carsController.sortCarsByCriteria);
+
+
+//Recuperer la liste paginée des voitures 
+router.get('/getCarPagineted',carsController.getPaginatedCars);
+
+
+
 
 module.exports = router;
