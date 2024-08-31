@@ -11,7 +11,7 @@ const panierSchema = new Schema({
     {
       type: Schema.Types.ObjectId,
       ref: 'Annonce',
-      required: true,
+      required: true,    /// assocation o many to many avec le model annonces
     }
   ],
   totalPrice: {

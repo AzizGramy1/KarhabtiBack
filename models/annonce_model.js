@@ -27,7 +27,10 @@ const annonceSchema = new mongoose.Schema(
     user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
 
     // Reference to the cars associated with this annonce
-    cars: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Cars' }] // One-to-many relationship with Cars
+    cars: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Cars' }], // One-to-many relationship with Cars
+
+    // Many-to-many relationship with Panier
+    paniers: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Panier' }]
   },
   { timestamps: true }
 );
