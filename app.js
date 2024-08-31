@@ -23,6 +23,9 @@ var annonceRouter = require ('./routes/annonce');
 var assistanceSupportRouter = require ('./routes/assistance&support');
 var commentaireRouter = require ('./routes/commentaire');
 var transactionRouter = require ('./routes/transaction');
+var panierRouter = require ('./routes/panier');
+
+
 
 
 
@@ -49,6 +52,9 @@ app.use('/assistance&support', assistanceSupportRouter);
 app.use('/commentaire', commentaireRouter);
 app.use('/transaction', transactionRouter);
 app.use('/auth',authorisedRouter);
+app.use('/panier',panierRouter);
+
+
 
 
 ///log des session
