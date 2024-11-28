@@ -59,17 +59,3 @@ exports.deleteAnnonce = async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 };
-
-
-// fonction de tri des annonces par date 
-exports.sortAnnoncesByDate = async (req, res) => {
-  try {
-    // L'ordre de tri peut être défini par un paramètre de requête (ascendant ou descendant)
-    const sortOrder = req.query.order === 'asc' ? 1 : -1; 
-
-    const annonces = await Annonce.find().sort({ date_publication: sortOrder });
-    res.status(200).json(annonces);
-  } catch (err) {
-    res.status(500).json({ message: err.message });
-  }
-};

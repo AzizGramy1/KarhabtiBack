@@ -17,7 +17,4 @@ router.put('updateAnnonceById/:id', annoncesController.updateAnnonce);
 // Supprimer une annonce par ID
 router.delete('deleteAnnonceById/:id', annoncesController.deleteAnnonce);
 
-// trier les annonces par date
-router.get('/sortAnnoncesByDate',annoncesController.sortAnnoncesByDate);
-
 module.exports = router;
